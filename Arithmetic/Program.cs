@@ -15,23 +15,28 @@ namespace Arithmetic
             int two;
             Console.Write("Please, enter first number: ");
             string firstNumber = Console.ReadLine();
-            if (!int.TryParse(Console.ReadLine(), out one))
+            while (!int.TryParse(Console.ReadLine(), out one))
             {
                 Console.Write("No! \nPlease, enter first number: ");
             }
-            Console.Write("Please, enter first number: ");
-            string secondNumber = Console.ReadLine();
-            if (!int.TryParse(Console.ReadLine(), out two))
+            if (int.TryParse(Console.ReadLine(), out one))
             {
-                Console.WriteLine("No! \nPlease, enter second number: ");
-            }
-            if (int.TryParse(Console.ReadLine(), out one) && int.TryParse(Console.ReadLine(), out two)) 
-            {
-                Console.WriteLine(one + two);
-                Console.WriteLine(one - two);
-                Console.WriteLine(one * two);
-                Console.WriteLine(one / two);
-                Console.ReadKey();
+                Console.Write("Please, enter first number: ");
+                string secondNumber = Console.ReadLine();
+                while (!int.TryParse(Console.ReadLine(), out two))
+                {
+                    Console.WriteLine("No! \nPlease, enter second number: ");
+                }
+                if (int.TryParse(Console.ReadLine(), out two))
+                {
+                    {
+                        Console.WriteLine(one + two);
+                        Console.WriteLine(one - two);
+                        Console.WriteLine(one * two);
+                        Console.WriteLine(one / two);
+                        Console.ReadKey();
+                    }
+                }
             }
         }
     }
